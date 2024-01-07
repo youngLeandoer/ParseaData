@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parser data</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styleMain.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="data-import.html">Импорт данных</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
-        <h2>Parser data</h2>
-        <div>
-            <label for="table-structure">Структура таблицы:</label>
-            <textarea id="table-structure" rows="4" placeholder="Paste table data here..."></textarea>
-            <button onclick="buildTable()">Создание таблицы</button>
-        </div>
-
-        <table id="data-table" class="display"></table>
+        <h1>Добро пожаловать на главную страницу</h1>
+        <input type="file" id="excel-file" accept=".xlsx">
+        <div id="data-table-container"></div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <script src="script.js"></script>
+    <script>
+    </script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+   /* Стили для главной страницы */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #FFC371, #FF5F6D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FF5F6D;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="file"]:hover {
+    background-color: #FF7F87;
+}
+
+#data-table-container {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #f2f2f2;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+}
+
+/* Стили для слайдера */
+.slider {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider button {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: #FF5F6D;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider button:hover {
+    background-color: #FF7F87;
+}
+header {
+    background-color: #FF5F6D;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #FF7F87;
+}
