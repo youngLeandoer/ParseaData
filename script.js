@@ -16,12 +16,13 @@
                 }
                 data.push(rowObject);
             }
-
+            const columns = headers.map(header => ({ "header": header, "data": header }))
             //СОЗДАНИЕ ТАБЛ
             $('#data-table').DataTable({
-                columns: headers.map(header => ({ "header": header, "data": header })),
+                columns: columns,
                 data: data,
             });
+
         }
         //ФУНКЦИЯ СОХРАНЕНИЯ ТАБЛ(ПОКА ТОЛЬКО В Excel Формат)
         function saveTable(){
@@ -34,7 +35,7 @@
                 const cells = Array.from(row.querySelectorAll('td')).map(td => td.textContent);
                 csvData.push(cells.join('\t'));
             });
-            const csvContent = csvData.join('\n');
+            const csvContent = '\uFEFF' + csvData.join('\n');
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             const url = URL.createObjectURL(blob);

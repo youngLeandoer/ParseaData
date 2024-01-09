@@ -21,7 +21,7 @@ h1 {
     margin-top: 0;
     text-align: center;
     text-transform: uppercase;
-    background-image: linear-gradient(to right, #FFC371, #FF5F6D);
+    background-image: linear-gradient(to right, #71cbff, #007bff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -38,7 +38,7 @@ input[type="file"] {
     border: none;
     border-radius: 5px;
     text-align: center;
-    background-color: #FF5F6D;
+    background-color: #007bff;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -46,7 +46,7 @@ input[type="file"] {
 }
 
 input[type="file"]:hover {
-    background-color: #FF7F87;
+    background-color: #007bff;
 }
 
 #data-table-container {
@@ -78,7 +78,7 @@ footer p {
     margin: 0 10px;
     border: none;
     border-radius: 50%;
-    background-color: #FF5F6D;
+    background-color: #007bff;
     color: #fff;
     font-size: 24px;
     cursor: pointer;
@@ -86,10 +86,10 @@ footer p {
 }
 
 .slider button:hover {
-    background-color: #FF7F87;
+    background-color: #007bff;
 }
 header {
-    background-color: #FF5F6D;
+    background-color: #007bff;
     padding: 10px 0;
 }
 
@@ -115,5 +115,5 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #FF7F87;
+    background-color: #007bff;
 }
