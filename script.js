@@ -19,7 +19,7 @@
             const columns = headers.map(header => ({ "header": header, "data": header }))
             //СОЗДАНИЕ ТАБЛ
             $('#data-table').DataTable({
-                columns: columns,
+                columns: columns,   
                 data: data,
             });
 
@@ -51,31 +51,31 @@
             $('#excel-file').change(function(e) {
                 var file = e.target.files[0];
                 var reader = new FileReader();
-    
+        
                 reader.onload = function(e) {
                     var data = new Uint8Array(e.target.result);
                     var workbook = XLSX.read(data, { type: 'array' });
                     var worksheet = workbook.Sheets[workbook.SheetNames[0]];
                     var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-    
+        
                     var tableHtml = '<table id="data-table" class="display">';
                     for (var i = 0; i < jsonData.length; i++) {
                         tableHtml += '<tr>';
                         for (var j = 0; j < jsonData[i].length; j++) {
                             if (i === 0) {
-                                tableHtml += '<th>' + jsonData[i][j] + '</th>';
+                                tableHtml += '<th>' + (jsonData[i][j] || '') + '</th>';
                             } else {
-                                tableHtml += '<td>' + jsonData[i][j] + '</td>';
+                                tableHtml += '<td>' + (jsonData[i][j] || '') + '</td>';
                             }
                         }
                         tableHtml += '</tr>';
                     }
                     tableHtml += '</table>';
-    
+        
                     $('#data-table-container').html(tableHtml);
                     $('#data-table').DataTable();
                 };
-    
+        
                 reader.readAsArrayBuffer(file);
             });
         });
