@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Data from Excel</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Import Data from Excel</h2>
+
+    <!-- Форма для загрузки Excel-файла -->
+    <label for="excel-file">Choose Excel File:</label>
+    <input type="file" id="excel-file" accept=".xlsx">
+
+    <!-- Кнопка для создания таблицы -->
+    <button id="create-table-button">Создать таблицу</button>
+
+    <!-- Текстовое поле для структуры таблицы -->
+    <label for="table-structure">Структура таблицы:</label>
+    <textarea id="table-structure" rows="10" cols="50" placeholder="Вставьте данные таблицы сюда..."></textarea>
+
+    <!-- Кнопка для сохранения таблицы -->
+    <button id="save-table-button">Сохранить таблицу</button>
+
+    <!-- Контейнер для отображения данных -->
+    <div id="data-table-container">
+        <table id="data-table" class="display"></table>
+    </div>
+
+    <!-- Кнопка для продолжения после соответствия колонок -->
+    <button id="continue-button" onclick="continueAfterMapping()" style="display:none;">Continue</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script src="dist/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

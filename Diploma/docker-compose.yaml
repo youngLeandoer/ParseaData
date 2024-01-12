@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  ImportedDataService:
+    container_name: DiplomDB
+    ports:
+      - "5438:5432"
+    environment:
+      - POSTGRES_PASSWORD=1488
+      - POSTGRES_USER=postgres
+    image: postgres:14.3-alpine

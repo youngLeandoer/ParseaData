@@ -1,12 +1,10 @@
+        //ФУНКЦИЯ СОЗДАНИЯ ТАБЛ     
         function buildTable() {
-            // ПОЛУЧЕНИЕ ДАННЫХ 
             const rawData = document.getElementById('table-structure').value;
             const rows = rawData.split('\n');
 
-            // ЗАГОЛОВКИ СТОЛБЦОВ
             const headers = rows[0].split('\t');
 
-            // МАССИВ ОБЪЕКТОВ 
             const data = [];
             for (let i = 1; i < rows.length; i++) {
                 const values = rows[i].split('\t');
@@ -16,14 +14,34 @@
                 }
                 data.push(rowObject);
             }
-            const columns = headers.map(header => ({ "header": header, "data": header }))
-            //СОЗДАНИЕ ТАБЛ
+
+            const dataTable = document.getElementById('data-table');
+
+            if (!dataTable) {
+                console.error("Элемент с id 'data-table' не найден.");
+                return;
+            }
+
+            if ($.fn.DataTable.isDataTable('#data-table')) {
+                $('#data-table').DataTable().destroy();
+            }
+
+            const headerRow = dataTable.querySelector('thead tr');
+            if (headerRow) {
+                headerRow.innerHTML = '';
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.innerHTML = header;
+                    headerRow.appendChild(th);
+                });
+            }
+            const columns = headers.map(header => ({ "data": header }));
             $('#data-table').DataTable({
-                columns: columns,   
+                columns: columns,
                 data: data,
             });
-
         }
+
         //ФУНКЦИЯ СОХРАНЕНИЯ ТАБЛ(ПОКА ТОЛЬКО В Excel Формат)
         function saveTable(){
             const table = document.getElementById('data-table');
