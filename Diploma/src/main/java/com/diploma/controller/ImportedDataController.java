@@ -52,7 +52,7 @@ public class ImportedDataController {
     @PostMapping("/import-list")
     public ResponseEntity<String> importDataList(@RequestBody List<ImportedData> importedDataList) {
         try {
-            importedDataService.saveImportedData((ImportedData) importedDataList); // Используйте ваш сервис
+            importedDataService.saveImportedData((ImportedData) importedDataList);
 
             return ResponseEntity.ok("Данные успешно импортированы.");
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class ImportedDataController {
     public ResponseEntity<String> saveToDatabase(@RequestBody List<ImportedData> importedDataList) {
         try {
             // Ваш код для сохранения данных в базе данных
-            importedDataService.saveImportedData((ImportedData) importedDataList); // Используйте ваш сервис
+            importedDataService.saveImportedData((ImportedData) importedDataList); 
 
             return ResponseEntity.ok("Данные успешно импортированы в бд.");
         } catch (Exception e) {
